@@ -770,6 +770,20 @@ void Invent(void)
 	long totalItems = 0;
 	long item, amount;
 
+	// durchlaufen slots
+	for (long i = 1; i <= slotAmount; i++)
+	{
+		item = getExtMapValue(currentINFO.slotsHash, i, itemBaseID);
+		amount = getMapValue(item, GetWichHash());
+
+		if (amount > 0)
+		{
+			// list list
+			totalItems += amount;
+
+			// SendInventoryMessage(item, amount);
+		}
+	}
 }
 void Mining(void)
 {
